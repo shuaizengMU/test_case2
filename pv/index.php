@@ -1,3 +1,10 @@
+<?php
+
+$pdb_name = $_GET['pdb'];
+echo $pdb_name;
+
+?>
+
 <html>
 
 <head>
@@ -23,9 +30,14 @@
 
 
   function loadMethylTransferase() {
+
+    var pdb_name = '<?php echo $pdb_name ;?>';
+    var pdb_filename = 'pdbs/' + pdb_name;
+    console.log(pdb_filename);
+
     // asynchronously load the PDB file for the dengue methyl transferase
     // from the server and display it in the viewer.
-    pv.io.fetchPdb('pdbs/1rb8.pdb', function (structure) {
+    pv.io.fetchPdb(pdb_filename, function (structure) {
       // display the protein as cartoon, coloring the secondary structure
       // elements in a rainbow gradient.
       viewer.cartoon('protein', structure, { color: color.ssSuccession() });

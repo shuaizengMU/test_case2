@@ -9,7 +9,7 @@ root.render(
   <React.StrictMode>
     <h>ReactJS</h>
     <br/>
-    <iframe src="http://localhost:9000/" width="1200" height="800px" frameborder = "0" ></iframe>
+    <iframe src="http://digbio-devel.missouri.edu:9090/index.php?pdb=1ake.pdb" width="1200" height="800px" frameborder = "0" ></iframe>
   </React.StrictMode>
 );
 
