@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  app-web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: "app-frontend"
+    command: sh -c "export PORT=8000 && npm start"
+    tty: true
+    volumes:
+      - .:/usr/src/app
+      - '/usr/src/app/node_modules'
+    expose: 
+      - 8000
+    ports:
+      - '8000:8000'
+
